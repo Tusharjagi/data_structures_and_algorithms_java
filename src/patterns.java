@@ -80,25 +80,45 @@ void main() {
 
 //    hollow rectangle
 
-    int n = 4;
+//    int n = 4;
+//
+//    for (int row = 1; row <= n; row++ ){
+//        for (int col = 1; col <= 6; col++) {
+//            if (row == 1 || row == n){
+//                System.out.print("* ");
+//            } else {
+//                if (col == 1) {
+//                    System.out.print("* ");
+//                } else if (col == 6) {
+//                    System.out.print("* ");
+//                } else {
+//                    System.out.print("  ");
+//                }
+//
+//            }
+//        }
+//        System.out.println();
+//    }
 
-    for (int row = 1; row <= n; row++ ){
-        for (int col = 1; col <= 6; col++) {
-            if (row == 1 || row == n){
-                System.out.print("* ");
-            } else {
-                if (col == 1) {
-                    System.out.print("* ");
-                } else if (col == 6) {
-                    System.out.print("* ");
-                } else {
-                    System.out.print("  ");
-                }
+//    hollow triangle
 
-            }
-        }
-        System.out.println();
-    }
+     int n = 5;
+
+     for (int row = 1; row <= 5; row++) {
+         if (row == 1 || row == 2 || row == n) {
+             for (int col = 1; col <= row; col++) {
+                 System.out.print("* ");
+             }
+         } else {
+             System.out.print("* ");
+             for (int col = 1; col <=(row -2); col++) {
+                 System.out.print("  ");
+             }
+             System.out.print("* ");
+         }
+         System.out.println();
+     }
+
 
 
 
