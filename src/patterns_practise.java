@@ -292,6 +292,23 @@ void main () {
 //        System.out.println();
 //    }
 
+//
+//    int n = 5;
+//
+//    for (int row = 1; row <= n; row++) {
+//        if (row == 1) {
+//            for (int col = 1; col <= n - 1 + 1; col++) {
+//                System.out.print("* ");
+//            }
+//        } else {
+//            System.out.print("* ");
+//            for (int col = 1; col <= n - row -1; col++) {
+//                System.out.print("  ");
+//            }
+//            System.out.print("* ");
+//        }
+//        System.out.println();
+//    }
 
 
 
