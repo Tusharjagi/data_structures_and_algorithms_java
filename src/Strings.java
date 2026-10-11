@@ -70,8 +70,86 @@ void main() {
 //        System.out.println("Results: " + st.trim());
 //    }
 
-    String str = "Tushhhhar";
-    str = str.replace('r', 'l');
-    System.out.println(str);
+//    String str = "Tushhhhar";
+//    str = str.replace('r', 'l');
+//    System.out.println(str);
+
+//    print each string
+//    String name = "Tushar";
+//
+//    int n = name.length();
+//
+//    for (int i = 0; i < n; i++) {
+//        char ch = name.charAt(i);
+//        System.out.println(ch);
+//    }
+
+//    String str = "tango";
+//    char[] arr = str.toCharArray();
+//    int len = arr.length;
+//    System.out.println(len);
+//    String str = "tushar";
+//
+//    int count = 0;
+//    for (int i = 0; i < str.length(); i++) {
+//        char ch = str.charAt(i);
+//        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+//            count++;
+//        }
+//    }
+//    System.out.println(count);
+
+//    String str = "tango";
+//
+//    String reverse = "";
+//
+//    int n = str.length();
+//    for (int i = n-1; i >=0; i--) {
+//        char ch = str.charAt(i);
+//        reverse += ch;
+//    }
+//
+//    System.out.println(reverse);
+
+//    String str = "NOON";
+//    String reverse = "";
+//    int n = str.length();
+//    for (int i = n-1; i >=0; i--) {
+//        char ch = str.charAt(i);
+//        reverse += ch;
+//    }
+//
+//    for (int i = 0; i < str.length(); i++) {
+//        char ch1 = str.charAt(i);
+//        char ch2 = reverse.charAt(i);
+//
+//        if (ch1 != ch2) {
+//            System.out.println("false");
+//        } else {
+//            System.out.println("True");
+//        }
+//
+//    }
+
+//    String str = "my, name is tushar jagi";
+
+//    int count = 0;
+//
+//    for (int i = 0; i < str.length(); i++) {
+//        char ch = str.charAt(i);
+//        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+//            count++;
+//        }
+//    }
+//
+//    int counter = 0;
+//
+//    String[] words = str.split(" ");
+//        for (String st: words) {
+//        counter++;
+//    }
+//    System.out.println(counter);
+
+//    find the frequency of a chac
 
 }
