@@ -28,11 +28,19 @@ void sumOfNumber (int num) {
     System.out.println(sum);
 }
 
-void reverseNumber (int nun) {
+int reverseNumber (int num) {
+    int revNum = 0;
 
+    while (num != 0) {
+        int digit = num % 10;
+        revNum = revNum * 10 + digit;
+        num = num / 10;
+    }
+    return  revNum;
 }
 
 void main () {
     int num = 1234;
-    sumOfNumber(num);
+    int revNum = reverseNumber(num);
+    System.out.println(revNum);
 }
