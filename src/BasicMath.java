@@ -39,8 +39,18 @@ int reverseNumber (int num) {
     return  revNum;
 }
 
+String isPalindrome (int num) {
+    int originalNum = num;
+    int reveredNum = reverseNumber(num);
+    if (originalNum == reveredNum) {
+        return "Its a palindrome";
+    } else {
+        return "Its not a palindrome";
+    }
+}
+
 void main () {
-    int num = 1234;
-    int revNum = reverseNumber(num);
-    System.out.println(revNum);
+    int num = 1221;
+    String result = isPalindrome(num);
+    System.out.println(result);
 }
