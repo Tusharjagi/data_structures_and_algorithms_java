@@ -49,8 +49,57 @@ String isPalindrome (int num) {
     }
 }
 
+boolean isPrimeNumber (int num) {
+//    for (int i = 2; i <= num -1; i++) {
+//        if (num%i == 0) {
+//            return false;
+//        }
+//    }
+//    return true;
+    for (int i =2; i*i<=num; i++) {
+                if (num%i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+int getGCD (int a, int b) {
+//    gcd(a,b) = gcd(b,a%b)
+    while (b != 0) {
+        int temp = b;
+        b = a%b;
+        a = temp;
+    }
+    return a;
+}
+
+int getLCM (int a, int b) {
+    int gcd = getGCD(a, b);
+    int prod = a*b;
+    int lcm = prod/gcd;
+    return lcm;
+}
+
+boolean isArmstrongNumber (int num) {
+    int sum = 0;
+    int originalNum = num;
+
+    while (num != 0) {
+        int digit = num % 10;
+        int cubeOfdigit = digit*digit*digit;
+        sum += cubeOfdigit;
+        num = num / 10;
+    }
+    if (sum == originalNum) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 void main () {
-    int num = 1221;
-    String result = isPalindrome(num);
+    int num = 3;
+    boolean result = isArmstrongNumber(153);
     System.out.println(result);
 }
