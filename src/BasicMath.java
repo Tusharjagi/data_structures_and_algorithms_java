@@ -98,8 +98,34 @@ boolean isArmstrongNumber (int num) {
     }
 }
 
+boolean checkPerfectNumber (int num) {
+    int sum = 1;
+
+    for (int i = 2; i*i<=num; i++) {
+        if (num % i == 0) {
+            int firstFactor = i;
+            int secondFactor = num/i;
+            sum = sum + firstFactor + secondFactor;
+        }
+    }
+    if (sum == num) {
+        return true;
+    } else {
+        return  false;
+    }
+}
+
+void printAllPrimeNumbers(int n) {
+    for (int i =2; i < n; i++) {
+        boolean isPrime = isPrimeNumber(i);
+        if (isPrime == true) {
+            System.out.println(i);
+        }
+    }
+}
+
 void main () {
-    int num = 3;
-    boolean result = isArmstrongNumber(153);
-    System.out.println(result);
+//    int num = 3;
+    printAllPrimeNumbers(100);
+//    System.out.println(result);
 }
