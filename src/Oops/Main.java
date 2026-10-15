@@ -19,16 +19,18 @@ public class Main {
 
 //        Runtime polymorphism
 
-        Circle c = new Circle();
-//        c.draw();
-        doDrawingStuff(c);
+//        Circle c = new Circle();
+////        c.draw();
+//        doDrawingStuff(c);
 
         React r = new React();
         doDrawingStuff(r);
-//        r.draw();
+        r.draw();
     }
 
     public static  void doDrawingStuff(Shape s) {
         s.draw();
+//        Circle c = (Circle)s;
+//        c.draw();
     }
 }
