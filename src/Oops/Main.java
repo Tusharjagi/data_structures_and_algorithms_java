@@ -23,14 +23,14 @@ public class Main {
 ////        c.draw();
 //        doDrawingStuff(c);
 
-        React r = new React();
-        doDrawingStuff(r);
-        r.draw();
+//        React r = new React();
+//        doDrawingStuff(r);
+//        r.draw();
     }
 
-    public static  void doDrawingStuff(Shape s) {
-        s.draw();
+//    public static  void doDrawingStuff(Shape s) {
+//        s.draw();
 //        Circle c = (Circle)s;
 //        c.draw();
-    }
+//    }
 }
