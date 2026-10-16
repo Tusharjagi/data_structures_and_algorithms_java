@@ -1,9 +1,6 @@
 package JavaCollectionFramework;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Collection;
+import java.util.*;
 
 public class Main {
     void main () {
@@ -43,10 +40,48 @@ public class Main {
             System.out.println("Element: " + iterator.next());
         }
 
+        List<Integer> list3 = new ArrayList<>();
+        list3.add(11);
+        list3.add(12);
+        list3.add(14);
+        System.out.println(list3.get(2));
+        System.out.println("Before set: " + list3);
+        list3.set(0, 100);
+        System.out.println("After set: " + list3);
 
+//        toArray
+        Object[] arr = list3.toArray();
+        for (Object obj: arr) {
+            System.out.println(obj);
+        }
 
-//        List<Integer> list = new ArrayList<>();
-//        Collection<Integer> collection = new ArrayList<>();
+//        contains
+
+        System.out.println(list3.contains(1000));
+
+        Collection<Integer> collection = new ArrayList<>();
+
+        list.add(12);
+        list.add(6);
+
+        System.out.println("Printing enter list: " + list);
+
+        Collections.sort(list);
+        System.out.println(list);
+
+        Collections.sort(list, Collections.reverseOrder());
+        System.out.println(list);
+
+//        clone
+        ArrayList<Integer> newList = (ArrayList<Integer>) list.clone();
+        System.out.println(newList);
+
+        ArrayList<Integer> marks = new ArrayList<>();
+        marks.ensureCapacity(100);
+
+        System.out.println(marks.isEmpty());
+
+        System.out.println(newList.indexOf(6));
     }
 
 }
