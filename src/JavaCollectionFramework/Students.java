@@ -48,6 +48,9 @@ public class Students implements Comparable<Students> {
 
     @Override
     public int compareTo(Students that) {
-        return this.age - that.age;
+        if (this.age == that.age) {
+            return this.name.compareTo(that.name);
+        }
+        return that.age - this.age;
     }
 }
