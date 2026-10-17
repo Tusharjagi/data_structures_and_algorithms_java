@@ -39,8 +39,10 @@ public class Main {
 //
 //        System.out.println(a);
 //        System.out.println(b);
+        int n = 10;
+//        System.out.println(n&(n-1));
 
-
+        System.out.println(n&(-n));
 
 
     }
