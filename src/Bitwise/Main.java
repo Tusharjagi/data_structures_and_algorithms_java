@@ -30,5 +30,18 @@ public class Main {
 //        System.out.println(3 << 2);
 //        System.out.println(16 >> 2);
 
+//        int a = 5;
+//        int b = 6;
+//
+//        a = a ^ b;
+//        b = a ^ b;
+//        a = a ^ b;
+//
+//        System.out.println(a);
+//        System.out.println(b);
+
+
+
+
     }
 }
