@@ -21,12 +21,14 @@ public class Main {
 //            System.out.println(n);
 //            System.out.println();
 //        }
-        int n = 100;
-        for (int i = 1; i <= 34; i++) {
-            n = n >>> 1;
-            System.out.println(n);
-            System.out.println();
-        }
+//        int n = 100;
+//        for (int i = 1; i <= 34; i++) {
+//            n = n >>> 1;
+//            System.out.println(n);
+//            System.out.println();
+//        }
+//        System.out.println(3 << 2);
+//        System.out.println(16 >> 2);
 
     }
 }
