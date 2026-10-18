@@ -144,10 +144,24 @@ public class ArrayManipulation {
         return result;
     }
 
+    int [] shiftElementByk(int arr[], int k) {
+        int size = arr.length;
+
+        if (size == 0) {
+            return arr;
+        }
+
+        k = k % size;
+        int[] result = new int[size];
+        for (int i = 0; i < size; i++) {
+            result[(i+k) % size] = arr[i];
+        }
+        return result;
+    }
+
     void main () {
         int arr1[] = {1, 2, 3, 4, 5, 6};
-        int arr2[] = {2, 3, 5, 8, 9};
-        int ans[] = getUnion(arr1, arr2);
+        int ans[] = shiftElementByk(arr1, 2);
         for (int i: ans) {
             System.out.print(i+ ", ");
         }
