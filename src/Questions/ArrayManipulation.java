@@ -105,9 +105,52 @@ public class ArrayManipulation {
         return ans;
     }
 
+    int[] getUnion(int[] arr1, int[] arr2) {
+        int[] temp = new int[arr1.length + arr2.length];
+        int k = 0;
+        for (int i = 0; i < arr1.length; i++) {
+            boolean found = false;
+
+            for (int j = 0; j < k; j++) {
+                if (temp[j] == arr1[i]) {
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found) {
+                temp[k++] = arr1[i];
+            }
+        }
+        for (int i = 0; i < arr2.length; i++) {
+            boolean found = false;
+
+            for (int j = 0; j < k; j++) {
+                if (temp[j] == arr2[i]) {
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found) {
+                temp[k++] = arr2[i];
+            }
+        }
+
+        int[] result = new int[k];
+        for (int i = 0; i < k; i++) {
+            result[i] = temp[i];
+        }
+        return result;
+    }
+
     void main () {
         int arr1[] = {1, 2, 3, 4, 5, 6};
         int arr2[] = {2, 3, 5, 8, 9};
+        int ans[] = getUnion(arr1, arr2);
+        for (int i: ans) {
+            System.out.print(i+ ", ");
+        }
 
 //        int ans[] = getHighestLowestFreqElement(arr);
 //        System.out.println(ans[0]);
