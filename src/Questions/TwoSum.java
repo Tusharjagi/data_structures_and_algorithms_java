@@ -39,9 +39,63 @@ public class TwoSum {
         return new ArrayList<>(output);
     }
 
+    int removeDuplicate(int[] nums) {
+        int i = 0;
+        int j = 1;
+        int n = nums.length;
+
+        while (j < n) {
+            if (nums[i] == nums[j]) {
+                j++;
+            } else {
+                i++;
+                nums[i] = nums[j];
+                j++;
+            }
+        }
+        return i + 1;
+    }
+
+    int firstFirstRepeating (int[] nums) {
+        HashMap<Integer, Integer> freq = new HashMap<>();
+
+        for (int num: nums) {
+            freq.put(num, freq.getOrDefault(num, 0) + 1);
+        }
+        for (int i: nums) {
+            if (freq.get(i) > 1) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    int pivotIndex (int[] arr) {
+        int n = arr.length;
+        int leftSum[] = new int[n];
+        int rightSum[] = new int[n];
+
+        leftSum[0] = arr[0];
+
+        for (int i = 1; i < n; i++) {
+            leftSum[i] = leftSum[i -1] + arr[i];
+        }
+        rightSum[n-1] = arr[n-1];
+        for (int i = n -2; i >= 0; i--) {
+            rightSum[i] = rightSum[i+1] + arr[i];
+        }
+
+        for (int i = 0; i<n; i++) {
+            if (leftSum[i] == rightSum[i]) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
     void main () {
-        int[] arr = {-1, 0, 1, 2, -1, -4};
-        System.out.println(threeSum(arr, 0));
+        int[] arr = {1, 7 ,3 ,6 , 5, 6};
+        System.out.println(pivotIndex(arr));
 
 
 //        int[] arr = {2 ,7 ,11, 15};
