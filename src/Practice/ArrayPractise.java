@@ -40,15 +40,31 @@ public class ArrayPractise {
         return arr;
     }
 
+    int secondLargestElement (int[] arr) {
+        int size = arr.length;
+        int firstLargest = Integer.MIN_VALUE;
+        int secondLargest = Integer.MIN_VALUE;
 
+        for (int i = 0; i < size; i++) {
+            if (arr[i] > firstLargest) {
+                secondLargest = firstLargest;
+                firstLargest = arr[i];
+            } else if (arr[i] > secondLargest && arr[i] < firstLargest) {
+                secondLargest = arr[i];
+            }
+        }
+        return secondLargest;
+
+
+    }
 
     void main () {
-        int[] arr = {1, 2, 3, 4, 5};
-        int[] ans = reverseArray(arr);
+        int[] arr = {1, 4, 9, 5, 3};
+        int ans = secondLargestElement(arr);
 
-        for (int i: ans) {
-            System.out.println(i + ", ");
-        }
-//        System.out.println("Result: " + ans);
+//        for (int i: ans) {
+//            System.out.println(i + ", ");
+//        }
+        System.out.println("Result: " + ans);
     }
 }
