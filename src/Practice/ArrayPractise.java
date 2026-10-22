@@ -59,12 +59,5 @@ public class ArrayPractise {
     }
 
     void main () {
-        int[] arr = {1, 4, 9, 5, 3};
-        int ans = secondLargestElement(arr);
-
-//        for (int i: ans) {
-//            System.out.println(i + ", ");
-//        }
-        System.out.println("Result: " + ans);
     }
 }
