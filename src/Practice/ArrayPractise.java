@@ -40,10 +40,10 @@ public class ArrayPractise {
         return arr;
     }
 
-    int secondLargestElement (int[] arr) {
+    int secondLargestElement(int[] arr) {
+        int firstLargest = 0;
+        int secondLargest = 0;
         int size = arr.length;
-        int firstLargest = Integer.MIN_VALUE;
-        int secondLargest = Integer.MIN_VALUE;
 
         for (int i = 0; i < size; i++) {
             if (arr[i] > firstLargest) {
@@ -51,13 +51,16 @@ public class ArrayPractise {
                 firstLargest = arr[i];
             } else if (arr[i] > secondLargest && arr[i] < firstLargest) {
                 secondLargest = arr[i];
+
             }
         }
+
         return secondLargest;
-
-
     }
 
     void main () {
+        int[] arr = {3, 5, 6, 1, 7, 9};
+        int ans = secondLargestElement(arr);
+        System.out.println(ans);
     }
 }
