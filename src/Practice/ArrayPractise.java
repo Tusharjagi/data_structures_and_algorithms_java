@@ -58,9 +58,18 @@ public class ArrayPractise {
         return secondLargest;
     }
 
+    boolean isSorted (int[] arr) {
+        for (int i = 0; i < arr.length -1; i++) {
+            if (arr[i] > arr[i + 1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     void main () {
-        int[] arr = {3, 5, 6, 1, 7, 9};
-        int ans = secondLargestElement(arr);
+        int[] arr = {1, 2, 3, 4, 2};
+        boolean ans = isSorted(arr);
         System.out.println(ans);
     }
 }
