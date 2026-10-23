@@ -67,9 +67,58 @@ public class ArrayPractise {
         return true;
     }
 
+    int removeDuplicates (int[] arr) {
+        if (arr.length == 0) {
+            return 0;
+        }
+
+        int j = 0;
+
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] != arr[j]) {
+                j++;
+                arr[j] = arr[i];
+            }
+        }
+        return j + 1;
+    }
+
+    int[] rotateByOne (int[] arr) {
+        int size = arr.length;
+        int[] result = new int[size];
+        int temp = arr[size - 1];
+        result[0] = temp;
+
+        for (int i = 0; i < size -1; i++) {
+            result[i + 1] = arr[i];
+        }
+
+        return result;
+    }
+
+    int[] rotateByK (int[] arr, int k) {
+        int n = arr.length;
+
+        if (n == 0) {
+            return arr;
+        }
+        k = k % n;
+        int[] result = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            result[i] = arr[(i + k) % n];
+        }
+
+        return result;
+    }
+
     void main () {
-        int[] arr = {1, 2, 3, 4, 2};
-        boolean ans = isSorted(arr);
-        System.out.println(ans);
+        int[] arr = {1, 2, 3, 4, 5};
+        int[] ans = rotateByK(arr, 2);
+
+        for (int i : ans) {
+            System.out.println(i + ", ");
+        }
+//        System.out.println(ans);
     }
 }
