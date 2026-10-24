@@ -1,6 +1,8 @@
 package Questions;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class RotateImageAndSpiralPrint {
 
@@ -27,6 +29,53 @@ public class RotateImageAndSpiralPrint {
         return matrix;
     }
 
+
+    List<Integer> spiralOrder(int[][] matrix) {
+        int n = matrix.length;
+        int m = matrix[0].length;
+
+        List<Integer> result = new ArrayList<>();
+
+        int startingRow = 0;
+        int endingRow = n - 1;
+        int startingCol = 0;
+        int endingCol = m - 1;
+
+        while (startingRow <= endingRow &&
+                startingCol <= endingCol) {
+
+            // Traverse top row: left to right
+            for (int col = startingCol; col <= endingCol; col++) {
+                result.add(matrix[startingRow][col]);
+            }
+            startingRow++;
+
+            // Traverse right column: top to bottom
+            for (int row = startingRow; row <= endingRow; row++) {
+                result.add(matrix[row][endingCol]);
+            }
+            endingCol--;
+
+            // Traverse bottom row: right to left
+            if (startingRow <= endingRow) {
+                for (int col = endingCol; col >= startingCol; col--) {
+                    result.add(matrix[endingRow][col]);
+                }
+                endingRow--;
+            }
+
+            // Traverse left column: bottom to top
+            if (startingCol <= endingCol) {
+                for (int row = endingRow; row >= startingRow; row--) {
+                    result.add(matrix[row][startingCol]);
+                }
+                startingCol++;
+            }
+        }
+
+        return result;
+    }
+
     void main () {
         int[][] matrix = {
                 {1, 2, 3},
@@ -34,16 +83,18 @@ public class RotateImageAndSpiralPrint {
                 {7, 8, 9}
         };
 
-        System.out.println("Original Matrix:");
-        for (int[] row : matrix) {
-            System.out.println(Arrays.toString(row));
-        }
+        System.out.println(spiralOrder(matrix));
 
-        rotate90Clockwise(matrix, matrix.length);
-
-        System.out.println("Rotated Matrix:");
-        for (int[] row : matrix) {
-            System.out.println(Arrays.toString(row));
-        }
+//        System.out.println("Original Matrix:");
+//        for (int[] row : matrix) {
+//            System.out.println(Arrays.toString(row));
+//        }
+//
+//        rotate90Clockwise(matrix, matrix.length);
+//
+//        System.out.println("Rotated Matrix:");
+//        for (int[] row : matrix) {
+//            System.out.println(Arrays.toString(row));
+//        }
     }
 }
