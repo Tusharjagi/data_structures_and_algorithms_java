@@ -25,19 +25,27 @@ public class practise2 {
         for (int i = 0; i <= 5; i++) {
             sumOfSequence =  sumOfSequence + i;
         }
-
         for (int i = 0; i < n; i++) {
             arraySum = arraySum + arr[i];
         }
-
         return sumOfSequence - arraySum;
+    }
 
+    int findSingleNumber (int[] arr) {
+        int n = arr.length;
+        int result = 0;
+
+        for (int i = 0; i < n; i++) {
+            result = result ^ arr[i];
+        }
+
+        return result;
     }
 
 
     void main () {
-        int[] arr = {1, 2, 4, 5};
-        int ans = missingNumber(arr);
+        int[] arr = {1, 1, 2, 2, 3, 4, 4, 5, 5};
+        int ans = findSingleNumber(arr);
 
         System.out.println(ans);
 
