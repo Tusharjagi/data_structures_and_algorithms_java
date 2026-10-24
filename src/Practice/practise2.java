@@ -43,14 +43,55 @@ public class practise2 {
     }
 
 
+    int[] unionArray(int[] arr1, int[] arr2) {
+        int[] result = new int[arr1.length + arr2.length];
+        int count = 0;
+
+        for (int i = 0; i < arr1.length; i++) {
+            boolean found = false;
+
+            for (int j = 0; j < count; j++) {
+                if (result[j] == arr1[i]) {
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found) {
+                result[count] = arr1[i];
+                count++;
+            }
+        }
+        for (int i = 0; i < arr2.length; i++) {
+            boolean found = false;
+
+            for (int j = 0; j < count; j++) {
+                if (result[j] == arr2[i]) {
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found) {
+                result[count] = arr2[i];
+                count++;
+            }
+        }
+
+        return java.util.Arrays.copyOf(result, count);
+    }
+
+
+
     void main () {
-        int[] arr = {1, 1, 2, 2, 3, 4, 4, 5, 5};
-        int ans = findSingleNumber(arr);
+        int[] arr1 = {1, 2, 3, 4};
+        int[] arr2 = {3, 4, 5, 6};
+        int[] ans = unionArray(arr1, arr2);
 
-        System.out.println(ans);
+//        System.out.println(ans);
 
-//        for (int i : ans) {
-//            System.out.print(i + ", ");
-//        }
+        for (int i : ans) {
+            System.out.print(i + ", ");
+        }
     }
 }
