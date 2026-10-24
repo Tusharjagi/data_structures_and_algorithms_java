@@ -1,23 +1,29 @@
 package Practice;
 
 public class practise {
-    int largetElement(int[] arr) {
-        int size = arr.length;
-        int largestEle = arr[0];
+    int largestElement (int[] arr) {
+        int largest = arr[0];
+        int n = arr.length;
 
-        for (int i = 0; i < size; i++) {
-            if (arr[i] < largestEle) {
-                largestEle = arr[i];
+        for (int i = 0; i < n; i++) {
+            if (arr[i] > largest) {
+                largest = arr[i];
             }
         }
-        return largestEle;
+        return largest;
     }
 
-    int[] reverseArray(int[] arr) {
+    int[] reverseArray (int[] arr) {
         int n = arr.length;
+//        int[] result = new int[n];
+//        int i = 0;
+//
+//        while (i != n) {
+//            result[i] = arr[n-i-1];
+//            i++;
+//        }
         int i = 0;
         int j = n-1;
-
         while (j >= i) {
             int temp = arr[i];
             arr[i] = arr[j];
@@ -25,53 +31,72 @@ public class practise {
             i++;
             j--;
         }
+
         return arr;
     }
 
-    int[] moveZero (int[] arr) {
+    int secondLargestElement (int[] arr) {
         int n = arr.length;
-        int j = 0;
+        int firstLargest = Integer.MIN_VALUE;
+        int secondLargest = Integer.MIN_VALUE;
 
         for (int i = 0; i < n; i++) {
-            if (arr[i] != 0) {
-                int temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
-                j++;
+            if (arr[i] > firstLargest) {
+                secondLargest = firstLargest;
+                firstLargest = arr[i];
+            } else if (firstLargest > arr[i] && secondLargest < arr[i]) {
+                secondLargest = arr[i];
             }
         }
-
-
-        return arr;
+        return secondLargest;
     }
 
-
-    int removeDuplicate(int[] arr) {
+    int removeDuplicates (int[] arr) {
         int n = arr.length;
-
-        if (n == 0) {
-            return 0;
-        }
-
         int j = 0;
 
         for (int i = 1; i < n; i++) {
-            if (arr[i] != arr[j]) {
+            if (arr[j] != arr[i]) {
                 j++;
                 arr[j] = arr[i];
             }
         }
-
         return j + 1;
     }
 
+    int[] leftRotateByOne (int[] arr) {
+        int n = arr.length;
+        int firstEle = arr[0];
+        int[] result = new int[n];
+
+        for (int i = 1; i < n; i++) {
+            result[i-1] = arr[i];
+        }
+        result[n-1] = firstEle;
+
+        return result;
+    }
+
+    int[] leftRotateByk (int[] arr, int k) {
+        int n = arr.length;
+
+        if (n == 0) return arr;
+        int[] result = new int[n];
+
+        k = k % n;
+        for (int i = 0; i < n; i++) {
+            result[(i - k +n) % n] = arr[i];
+        }
+
+        return result;
+    }
 
     void main(String[] args) {
-        int[] arr = {1, 2, 2, 2 ,4 , 4, 4,3, 5};
-        int ans = removeDuplicate(arr);
-//        for (int i: ans) {
-//            System.out.print(i+", ");
-//        }
-        System.out.println(ans);
+        int[] arr = {1, 2, 3, 4, 5};
+        int[] ans = leftRotateByk(arr, 2);
+        for (int i: ans) {
+            System.out.print(i+", ");
+        }
+//        System.out.println(ans);
     }
 }
