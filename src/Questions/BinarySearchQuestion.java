@@ -13,7 +13,7 @@ public class BinarySearchQuestion {
 
         while (s <= e) {
             int mid = s + (e-s) /2;
-            if (arr[mid] < arr[n-1]) {
+            if (arr[mid] <= arr[n-1]) {
                 e = mid -1;
             } else {
                 ans =mid;
