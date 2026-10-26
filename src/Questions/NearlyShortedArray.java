@@ -22,9 +22,9 @@ public class NearlyShortedArray {
             }
 
             if (k > arr[mid]) {
-                s = mid + 1;
+                s = mid + 2;
             } else {
-                e = mid - 1;
+                e = mid - 2;
             }
         }
         return -1;
