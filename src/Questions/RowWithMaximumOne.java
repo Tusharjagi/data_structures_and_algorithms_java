@@ -33,7 +33,7 @@ public class RowWithMaximumOne {
         for (int row = 0; row < totalRow; row++) {
             int firstOccIndex = getFirstOccIndex(mat, row);
             int oneCount = totalCol - firstOccIndex;
-            if (oneCount > maxi) {
+            if (oneCount != 0 && oneCount > maxi) {
                 maxi = oneCount;
                 maxOneRowIndex = row;
             }
