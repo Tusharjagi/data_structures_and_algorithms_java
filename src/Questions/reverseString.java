@@ -28,13 +28,30 @@ public class reverseString {
             i = j;
         }
         return ans.toString();
+    }
+
+    char mostFreqCh (String s) {
+        int[] freq = new int[26];
+        int maxFreq = -1;
+        char ans = s.charAt(0);
 
 
+        for (int i =0; i<s.length(); i++) {
+            char currChar = s.charAt(i);
+            freq[currChar - 'a']++;
+        }
+        for (int i = 0; i < 26; i++) {
+            if (freq[i] > maxFreq) {
+                maxFreq = freq[i];
+                ans = (char)(i + 'a');
+            }
+        }
+        return ans;
     }
 
     void main () {
-        String str = "the sky is blue";
-        String ans = reverseString(str);
+        String str = "banana";
+        char ans = mostFreqCh(str);
         System.out.println("Ans: " + ans);
     }
 }
