@@ -17,9 +17,21 @@ public class BasicMaths {
         return counter;
     }
 
+    int reverseNumber (int n) {
+        int result = 0;
+
+        while (n != 0) {
+            int digit = n % 10;
+            result = result * 10 + digit;
+            n = n /10;
+        }
+
+        return result;
+    }
+
     void main () {
         int n = 12345;
-        int ans = countDigits(n);
+        int ans = reverseNumber(n);
         System.out.println("Ans: " + ans);
     }
 }
