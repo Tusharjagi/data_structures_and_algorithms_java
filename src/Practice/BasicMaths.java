@@ -101,11 +101,26 @@ public class BasicMaths {
         return result;
     }
 
+    int [] swapTwoNumber (int a, int b) {
+        int[] arr = new int[2];
+        int temp = a;
+        a = b;
+        b = temp;
+        arr[0] = a;
+        arr[1] = b;
+        return arr;
+    }
+
     void main () {
         int a = 10;
-        int b = 25;
-        int c = 15;
-        int ans = largestOfThree(a, b, c);
-        System.out.println("Ans: " + ans);
+        int b = 20;
+
+        int[] ans = swapTwoNumber(a, b);
+
+        for (int i: ans) {
+            System.out.println(i + ", ");
+        }
+
+//        System.out.println("Ans: " + ans);
     }
 }
