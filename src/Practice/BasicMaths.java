@@ -66,9 +66,23 @@ public class BasicMaths {
         return multiplication;
     }
 
+    String eventOrOdd (int n) {
+        if (n == 0) {
+            return "Odd";
+        }
+        if (n == 1) {
+            return "Even";
+        }
+
+        if ((n & 1) == 0) {
+            return "Even";
+        }
+        return "Odd";
+    }
+
     void main () {
-        int n = 1234;
-        int ans = productOfDigit(n);
+        int n = 10;
+        String ans = eventOrOdd(n);
         System.out.println("Ans: " + ans);
     }
 }
