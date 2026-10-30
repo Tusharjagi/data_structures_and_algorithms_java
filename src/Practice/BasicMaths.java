@@ -111,16 +111,25 @@ public class BasicMaths {
         return arr;
     }
 
-    void main () {
-        int a = 10;
-        int b = 20;
+    int powerOfNumber (int a, int b) {
+        int cal = 1;
 
-        int[] ans = swapTwoNumber(a, b);
-
-        for (int i: ans) {
-            System.out.println(i + ", ");
+        for (int i = 1; i <= b; i++) {
+            cal = cal * a;
         }
+        return cal;
+    }
 
-//        System.out.println("Ans: " + ans);
+    void main () {
+        int a = 2;
+        int b = 5;
+
+        int ans = powerOfNumber(a, b);
+
+//        for (int i: ans) {
+//            System.out.println(i + ", ");
+//        }
+
+        System.out.println("Ans: " + ans);
     }
 }
