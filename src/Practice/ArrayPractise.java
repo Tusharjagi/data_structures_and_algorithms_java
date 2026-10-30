@@ -52,14 +52,34 @@ public class ArrayPractise {
         return secondElement;
     }
 
+    int[] countEventOrOdd (int[] arr) {
+        int n = arr.length;
+        int[] result = new int[2];
+        int odd = 0;
+        int event = 0;
+
+        for (int i = 0; i < n; i++) {
+            if (arr[i] % 2 == 0) {
+                odd++;
+            } else {
+                event++;
+            }
+
+        }
+        result[0] = odd;
+        result[1] = event;
+        return result;
+
+    }
+
     void main () {
 
-        int[] arr = {10, 50, 20, 80, 30, 40};
-        int ans = secondLargestElement(arr);
+        int[] arr = {1,2,3,4,5,6,7};
+        int[] ans = countEventOrOdd(arr);
 
-//        for (int i : ans) {
-//            System.out.println(i + ", ");
-//        }
-        System.out.println(ans);
+        for (int i : ans) {
+            System.out.println(i + ", ");
+        }
+//        System.out.println(ans);
     }
 }
