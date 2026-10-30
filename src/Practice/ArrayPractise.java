@@ -99,10 +99,18 @@ public class ArrayPractise {
         return arr;
     }
 
+    int[] swapFirstAndLastElement(int[] arr) {
+        int n = arr.length;
+        int temp = arr[n-1];
+        arr[n-1] = arr[0];
+        arr[0] = temp;
+        return arr;
+    }
+
     void main () {
 
-        int[] arr = {1,2,3,4,5};
-        int[] ans = reverseArray(arr);
+        int[] arr = {10, 20, 30, 40};
+        int[] ans = swapFirstAndLastElement(arr);
 
         for (int i : ans) {
             System.out.println(i + ", ");
