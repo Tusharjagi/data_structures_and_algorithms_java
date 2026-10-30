@@ -72,14 +72,25 @@ public class ArrayPractise {
 
     }
 
+    int searchElement (int[] arr, int target){
+        int n = arr.length;
+
+        for (int i : arr) {
+            if (arr[i] == target) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
     void main () {
 
         int[] arr = {1,2,3,4,5,6,7};
-        int[] ans = countEventOrOdd(arr);
+        int ans = searchElement(arr, 5);
 
-        for (int i : ans) {
-            System.out.println(i + ", ");
-        }
-//        System.out.println(ans);
+//        for (int i : ans) {
+//            System.out.println(i + ", ");
+//        }
+        System.out.println(ans);
     }
 }
