@@ -44,9 +44,20 @@ public class BasicMaths {
         return temp == reverse;
     }
 
+    int sumOfDigits (int n) {
+        int sum = 0;
+
+        while (n != 0) {
+            int digit = n % 10;
+            sum += digit;
+            n = n / 10;
+        }
+        return sum;
+    }
+
     void main () {
-        int n = 12421341;
-        boolean ans = palindromeNumber(n);
+        int n = 1234;
+        int ans = sumOfDigits(n);
         System.out.println("Ans: " + ans);
     }
 }
