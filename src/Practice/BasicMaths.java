@@ -120,16 +120,53 @@ public class BasicMaths {
         return cal;
     }
 
-    void main () {
-        int a = 2;
-        int b = 5;
+    boolean primeNumber (int n) {
+        if (n <= 1) {
+            return false;
+        }
+        if (n == 2) {
+            return true;
+        }
+        if (n % 2 == 0) {
+            return false;
+        }
+        for (int i = 3; i <= n/i; i+=2) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
 
-        int ans = powerOfNumber(a, b);
+    void printPrimeNumber(int n) {
+        for (int num = 2; num <= n; num++) {
+            boolean isPrime = true;
+
+            for (int i = 2; i <= num / i; i++) {
+                if (num % i == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+
+            if (isPrime) {
+                System.out.print(num + " ");
+            }
+        }
+    }
+
+
+    void main () {
+        int a = 10;
+        int b = 5;
+        printPrimeNumber(20);
+
+//        boolean ans = printPrimeNumber(a);
 
 //        for (int i: ans) {
 //            System.out.println(i + ", ");
 //        }
 
-        System.out.println("Ans: " + ans);
+//        System.out.println("Ans: " + ans);
     }
 }
