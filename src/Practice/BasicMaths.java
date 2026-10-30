@@ -80,9 +80,16 @@ public class BasicMaths {
         return "Odd";
     }
 
+    String positiveOrNegative (int n) {
+        if (n > 0) {
+            return "Positive";
+        }
+        return "negative";
+    }
+
     void main () {
-        int n = 10;
-        String ans = eventOrOdd(n);
+        int n = -15;
+        String ans = positiveOrNegative(n);
         System.out.println("Ans: " + ans);
     }
 }
