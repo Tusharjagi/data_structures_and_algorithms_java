@@ -83,14 +83,30 @@ public class ArrayPractise {
         return -1;
     }
 
+    int[] reverseArray (int[] arr) {
+        int n = arr.length;
+        int i =0;
+        int j = n -1;
+
+        while (j >= i) {
+            int temp = arr[j];
+            arr[j] = arr[i];
+            arr[i] = temp;
+            i++;
+            j--;
+        }
+
+        return arr;
+    }
+
     void main () {
 
-        int[] arr = {1,2,3,4,5,6,7};
-        int ans = searchElement(arr, 5);
+        int[] arr = {1,2,3,4,5};
+        int[] ans = reverseArray(arr);
 
-//        for (int i : ans) {
-//            System.out.println(i + ", ");
-//        }
-        System.out.println(ans);
+        for (int i : ans) {
+            System.out.println(i + ", ");
+        }
+//        System.out.println(ans);
     }
 }
