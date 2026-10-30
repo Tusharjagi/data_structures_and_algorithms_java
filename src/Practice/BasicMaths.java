@@ -29,9 +29,24 @@ public class BasicMaths {
         return result;
     }
 
+    boolean palindromeNumber (int n) {
+        int temp = n;
+        int reverse = 0;
+        if (n < 0) {
+            return false;
+        }
+
+        while (n != 0) {
+            int digit = n % 10;
+            reverse = reverse * 10 + digit;
+            n = n /10;
+        }
+        return temp == reverse;
+    }
+
     void main () {
-        int n = 12345;
-        int ans = reverseNumber(n);
+        int n = 12421341;
+        boolean ans = palindromeNumber(n);
         System.out.println("Ans: " + ans);
     }
 }
