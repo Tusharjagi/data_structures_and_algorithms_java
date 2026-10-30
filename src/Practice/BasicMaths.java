@@ -87,9 +87,25 @@ public class BasicMaths {
         return "negative";
     }
 
+    int largestOfThree (int a, int b, int c) {
+        int result = 0;
+
+        if (a >= b && a >= c) {
+            result = a;
+        } else if (b >= a && b >= c) {
+            result = b;
+        } else {
+            result = c;
+        }
+
+        return result;
+    }
+
     void main () {
-        int n = -15;
-        String ans = positiveOrNegative(n);
+        int a = 10;
+        int b = 25;
+        int c = 15;
+        int ans = largestOfThree(a, b, c);
         System.out.println("Ans: " + ans);
     }
 }
