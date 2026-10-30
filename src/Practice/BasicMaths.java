@@ -55,9 +55,20 @@ public class BasicMaths {
         return sum;
     }
 
+    int productOfDigit (int n) {
+        int multiplication = 1;
+
+        while (n != 0) {
+            int digit = n % 10;
+            multiplication = multiplication * digit;
+            n = n /10;
+        }
+        return multiplication;
+    }
+
     void main () {
         int n = 1234;
-        int ans = sumOfDigits(n);
+        int ans = productOfDigit(n);
         System.out.println("Ans: " + ans);
     }
 }
